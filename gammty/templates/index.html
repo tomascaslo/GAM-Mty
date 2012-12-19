@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  	<meta charset="UTF-8">
+    <title>GAM Sede Mty</title>
+    <!-- Bootstrap -->
+    <link href="/static/static/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style type="text/css">
+
+    html,	
+    body {
+    	height: 100%;
+        padding-top: 20px;
+        padding-bottom: 40px;
+    }
+
+    /* Cambia el tamaño de la letra en los párrafos de la clase 'lead' */
+    .lead{
+    	font-size: 15px;
+    	text-align: justify; 
+    	text-justify: newspaper;
+    }
+
+    /* Cambia el tamaño del logo */
+    .logo-size{
+
+    }
+
+    .red .active a,
+    .red .active a:hover {
+   		background-color: #C71F1B; /* #E30613; */
+	}
+
+	.nav-pills > .active > a, 
+	.nav-pills > .active > a:hover {
+    	background-color: #C71F1B;;
+	}
+
+	.nav-pills > li > a{
+		display:block; 
+		color: black;
+		font-size: 20px;
+	}
+
+	/* Cambia el color de la opcion activa en el dropdown menu a #E30613 */
+	.dropdown-menu li > a:hover, 
+	.dropdown-menu li > a:focus,
+	.dropdown-submenu:hover > a{
+		background-image: none;
+    	background-color: #C71F1B;
+	}
+
+	.active .dropdown-menu a{
+		color: black;
+		background-color: #FFFFFF;
+	}
+
+	.black-caret{
+		border-top-color: black !important;
+		border-bottom-color: black !important;
+	}
+
+	.separator{ 
+		color: #F0F0F0;
+		font-size: 25px;
+		padding-top: 5px;
+	}
+
+	.gray-bgd{
+		background-color: #F0F0F0;
+	}
+
+	/* Cambia el padding de los metro squares a 0 */
+	.metro-padding{
+		padding: 0px;
+		margin: 0px;
+	}
+
+	/* Metro tile style */
+	a.tile-hover:hover {
+		/* border: 1px solid #E1E1E1; */
+		background-color:white;
+		opacity:0.8;
+		text-decoration: none;
+	}
+
+/*
+	.img-tile {
+    	position:relative;
+	}
+
+	.lead.tile-text {
+	    left: 0;
+	    color: white;
+	    font-size: 40px;
+	    position:absolute;
+	    text-align:center;
+	    top: 70px;
+	    width: 100%
+	}
+*/
+
+	.img-tile {
+		position:relative;
+    	vertical-align: middle;	
+	}
+
+	.lead.tile-text {
+		position:absolute;
+	    left: 0;
+	    color: white;
+	    font-size: 40px;
+	    text-align:center;
+		vertical-align: middle;
+	    top: 70px;
+	    width: 100%
+	}
+
+	.unselectable {
+		-webkit-user-select: none;
+		-khtml-user-select: none;
+		-moz-user-select: none;
+		-o-user-select: none;
+		user-select: none;
+	}
+
+	/* Wrapper for page content to push down footer */
+	#wrap {
+	min-height: 100%;
+	height: auto !important;
+	height: 100%;
+
+	/* Negative indent footer by it's height */
+	margin: 0 auto -60px;
+	}
+
+	/* Set the fixed height of the footer here */
+	#push,
+	#footer {
+		height: 60px;
+	}
+
+	#footer {
+		padding-top: 15px;
+		background-color: #f5f5f5;
+	}
+
+      /* Lastly, apply responsive CSS fixes as necessary */
+    @media (max-width: 767px) {
+      #footer {
+        margin-left: -20px;
+        margin-right: -20px;
+        padding-left: 20px;
+        padding-right: 20px;
+      }
+    }
+
+    .img-padding{
+    	padding: 4px;
+    }
+
+    /* Contenidos */
+    /* Contenidos dentro de well */
+    .subtitulo{
+    	color: #C71F1B;
+    }
+
+    .well-img{
+    	width: 310px;
+    	height: 220px;
+    }
+
+    /* Responsive video */
+	.flex-video {
+		position: relative;
+		padding-top: 25px;
+		padding-bottom: 67.5%;
+		height: 0;
+		margin-bottom: 16px;
+		overflow: hidden;
+	}
+ 
+	.flex-video.widescreen{ 
+		padding-bottom: 57.25%; 
+	}
+	
+	.flex-video.vimeo{ 
+		padding-top: 0; 
+	}
+ 
+	.flex-video iframe,
+	.flex-video object,
+	.flex-video embed {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	@media only screen and (max-device-width: 800px), only screen and (device-width: 1024px) and (device-height: 600px), only screen and (width: 1280px) and (orientation: landscape), only screen and (device-width: 800px), only screen and (max-width: 767px) {
+  		.flex-video{ 
+  			padding-top: 0; 
+  		}
+	}
+
+     </style>
+	<link href="/static/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
+  </head>
+  <body>
+  	<div id="wrap">
+	  	<div class="container-fluid top-container">
+	  		<div class="row-fluid">
+	  			<div class="span10 offset1">
+	  				<div class="row-fluid">
+	  					<div class="span6">
+	  						<a class="brand" href="index.html"> <img src="/static/static/imgs/logo.png" class="img-rounded logo-size"></a>	
+	  					</div>
+	  				</div>
+	  				<div class="row-fluid">
+	  					<div class="span12">
+	  						<div class="masthead">
+					        	<ul class="nav red nav-pills pull-right">
+					          		{% block active-pill %} {% endblock %}
+					        	</ul>
+			      			</div>
+	  					</div>
+	  				</div>
+	  				<hr>		
+<!-- A partir de aquí se cambia el contenido dependiendo la página -->
+					<div id="content">
+      					{% block content %} {% endblock %}
+    				</div>
+<!-- Termina seccion de contenido -->
+					<hr>
+	      		</div>
+	      	</div>
+	    </div>
+	    <div id="push"></div>
+	</div>
+	<div id="footer">
+      	<div class="container-fluid">
+        	<div class="row-fluid">
+        		<div class="span10 offset1">
+        			<div class="row-fluid">
+        				<div class="span8">
+        					© {% now "Y" %} <abbr title="Grupo Águilas México" class="initialism">GAM</abbr> Mty |<a class="btn btn-link" href="/admin/gammty/">Admin Login</a>
+        				</div>
+        				<div class="span4">
+	        				<div class="row-fluid">
+	        					<a href="http://www.youtube.com">
+	        						<img class="pull-right img-padding" src="/static/static/imgs/youtube-icon.png">
+	        					</a>
+	        					<a href="http://www.twitter.com">
+	        						<img class="pull-right img-padding" src="/static/static/imgs/twitter-icon.png">
+	        					</a>
+	        					<a href="http://www.facebook.com/gammty">
+									<img class="pull-right img-padding" src="/static/static/imgs/facebook-icon.png">
+								</a>
+	        				</div>
+        				</div>	
+        			</div>
+        		</div>
+        	</div>	
+      	</div>
+    </div>
+    <script src="http://code.jquery.com/jquery-latest.js"></script>
+    <script src="/static/static/bootstrap/js/bootstrap.min.js"></script>
+  </body>
+</html>
